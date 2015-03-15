@@ -22,7 +22,7 @@ app.disable('etag');
 // Connect to our mongo database
 mongoose.connect('mongodb://localhost/react-tweets');
 
-// Create a new ntwitter instance
+// Create a new twitter instance
 var twit = new twitter(config.twitter);
 
 // Index Route
@@ -43,6 +43,6 @@ var server = http.createServer(app).listen(port, function() {
 var io = require('socket.io').listen(server);
 
 // Set a stream listener for tweets matching tracking keywords
-twit.stream('statuses/filter',{ track: 'javascript'}, function(stream){
+twit.stream('statuses/filter',{ track: 'deathpenalty'}, function(stream){
   streamHandler(stream,io);
 });
