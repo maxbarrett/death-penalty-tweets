@@ -12,7 +12,21 @@ React.renderComponent(
   TweetsApp({tweets: initialState}),
   document.getElementById('react-app')
 );
-},{"./components/TweetsApp.react":"/Users/MaxBarrett/Dev/react-tweets/components/TweetsApp.react.js","react":"/Users/MaxBarrett/Dev/react-tweets/node_modules/react/react.js"}],"/Users/MaxBarrett/Dev/react-tweets/components/NotificationBar.react.js":[function(require,module,exports){
+},{"./components/TweetsApp.react":"/Users/MaxBarrett/Dev/react-tweets/components/TweetsApp.react.js","react":"/Users/MaxBarrett/Dev/react-tweets/node_modules/react/react.js"}],"/Users/MaxBarrett/Dev/react-tweets/components/Loader.react.js":[function(require,module,exports){
+/** @jsx React.DOM */
+
+var React = require('react');
+
+module.exports = Loader = React.createClass({displayName: 'Loader',
+  render: function(){
+    return (
+      React.DOM.div({className: "loader " + (this.props.paging ? "active" : "")}, 
+        React.DOM.img({src: "svg/loader.svg"})
+      )
+    )
+  }
+});
+},{"react":"/Users/MaxBarrett/Dev/react-tweets/node_modules/react/react.js"}],"/Users/MaxBarrett/Dev/react-tweets/components/NotificationBar.react.js":[function(require,module,exports){
 /** @jsx React.DOM */
 
 var React = require('react');
@@ -80,6 +94,7 @@ module.exports = Tweets = React.createClass({displayName: 'Tweets',
 
 var React = require('react');
 var Tweets = require('./Tweets.react.js');
+var Loader = require('./Loader.react.js');
 var NotificationBar = require('./NotificationBar.react.js');
 
 // Export the TweetsApp component
@@ -251,6 +266,7 @@ module.exports = TweetsApp = React.createClass({displayName: 'TweetsApp',
     return (
       React.DOM.div({className: "tweets-app"}, 
         Tweets({tweets: this.state.tweets}), 
+        Loader({paging: this.state.paging}), 
         NotificationBar({count: this.state.count, onShowNewTweets: this.showNewTweets})
       )
     )
@@ -258,7 +274,7 @@ module.exports = TweetsApp = React.createClass({displayName: 'TweetsApp',
   }
 
 });
-},{"./NotificationBar.react.js":"/Users/MaxBarrett/Dev/react-tweets/components/NotificationBar.react.js","./Tweets.react.js":"/Users/MaxBarrett/Dev/react-tweets/components/Tweets.react.js","react":"/Users/MaxBarrett/Dev/react-tweets/node_modules/react/react.js"}],"/Users/MaxBarrett/Dev/react-tweets/node_modules/react/lib/AutoFocusMixin.js":[function(require,module,exports){
+},{"./Loader.react.js":"/Users/MaxBarrett/Dev/react-tweets/components/Loader.react.js","./NotificationBar.react.js":"/Users/MaxBarrett/Dev/react-tweets/components/NotificationBar.react.js","./Tweets.react.js":"/Users/MaxBarrett/Dev/react-tweets/components/Tweets.react.js","react":"/Users/MaxBarrett/Dev/react-tweets/node_modules/react/react.js"}],"/Users/MaxBarrett/Dev/react-tweets/node_modules/react/lib/AutoFocusMixin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
