@@ -11,6 +11,7 @@ var express = require('express'),
 // Create an express instance and set a port variable
 var app = express();
 var port = process.env.PORT || 8080;
+var db = process.env.MONGOLAB_URI || 'mongodb://localhost/react-tweets';
 
 // Set handlebars as the templating engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
@@ -20,7 +21,7 @@ app.set('view engine', 'handlebars');
 app.disable('etag');
 
 // Connect to our mongo database
-mongoose.connect('mongodb://localhost/react-tweets');
+mongoose.connect(db);
 
 // Create a new twitter instance
 var twit = new twitter(config.twitter);
