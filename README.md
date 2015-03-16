@@ -1,6 +1,4 @@
-# Real Time Twitter Stream with Node, React & MongoDB
-
-Forked from: https://github.com/scotch-io/react-tweets
+# Real Time Twitter Stream
 
 Hosted on Heroku: https://react-twts.herokuapp.com/
 
@@ -8,5 +6,8 @@ Hosted on Heroku: https://react-twts.herokuapp.com/
 - Node
 - Express
 - Websockets
+- Browserify
 - MongoDB
 - Mongoose
+
+Forked from: https://github.com/scotch-io/react-tweets
