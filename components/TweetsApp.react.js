@@ -168,6 +168,12 @@ module.exports = TweetsApp = React.createClass({
 
   },
 
+  email: function(){
+
+    console.log(this);
+
+  },
+
   // Render the component
   render: function(){
 

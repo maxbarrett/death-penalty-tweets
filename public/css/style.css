@@ -213,6 +213,9 @@ footer .update-message
     margin-top: 5px;
 }
 
+.tweet .email { text-decoration:underline; }
+.tweet .email:hover { text-decoration:none; }
+
 .tweet:before,
 .tweet:after
 {

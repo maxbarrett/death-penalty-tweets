@@ -6,12 +6,28 @@ var express = require('express'),
   twitter = require('twitter'),
   routes = require('./routes'),
   config = require('./config'),
-  streamHandler = require('./utils/streamHandler');
+  streamHandler = require('./utils/streamHandler'),
+  mailer = require('./utils/mailer');
+
 
 // Create an express instance and set a port variable
 var app = express();
 var port = process.env.PORT || 8080;
 var db = process.env.MONGOLAB_URI || 'mongodb://localhost/react-tweets';
+
+
+
+// setup e-mail data with unicode symbols
+var mailOptions = {
+    from: 'Tweets McGeets <tweets@mcgeets.com>', // sender address
+    to: 'm4xjb@hotmail.com', // list of receivers
+    subject: 'Subject', // Subject line
+    text: 'Hello world', // plaintext body
+    html: 'Hello world' // html body
+};
+
+// mailer(mailOptions);
+
 
 // Set handlebars as the templating engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
