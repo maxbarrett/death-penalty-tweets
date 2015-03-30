@@ -7,4 +7,11 @@ const twitter = {
     access_token_secret: process.env.TWITTER_access_token_secret || 'a039ieRzSh7TwNusUOWu6HEteOWtQXq1H2AtYaquL7vR9',
 };
 
+// your email address & password
+const emailAuth = {
+    user: 'me@example.com',
+    pass: 'password1',
+};
+
 exports.twitter = twitter;
+exports.emailAuth = emailAuth;
