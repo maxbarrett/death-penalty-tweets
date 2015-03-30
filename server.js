@@ -14,18 +14,6 @@ var app = express();
 var port = process.env.PORT || 8080;
 var db = process.env.MONGOLAB_URI || 'mongodb://localhost/react-tweets';
 
-
-
-// setup e-mail data with unicode symbols
-var mailOptions = {
-    from: 'Tweets McGeets <tweets@mcgeets.com>', // sender address
-    to: 'm4xjb@hotmail.com', // list of receivers
-    subject: 'Subject', // Subject line
-    text: 'Hello world', // plaintext body
-    html: 'Hello world' // html body
-};
-
-
 console.log(process.env.NODE_ENV);
 
 // Set handlebars as the templating engine
