@@ -13,8 +13,8 @@ var express = require('express'),
 var app = express();
 var port = process.env.PORT || 8080;
 var db = process.env.MONGOLAB_URI || 'mongodb://localhost/react-tweets';
+var env = process.env.NODE_ENV || 'development';
 
-console.log(process.env.NODE_ENV);
 
 // Set handlebars as the templating engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
@@ -40,7 +40,7 @@ app.use("/", express.static(__dirname + "/public/"));
 
 // Fire this bitch up (start our server)
 var server = http.createServer(app).listen(port, function() {
-  console.log('Express server listening on port ' + port);
+  console.log('Express server listening on port ' + port + ', in ' + env + ' mode.');
 });
 
 // Initialize socket.io
