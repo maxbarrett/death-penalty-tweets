@@ -6,8 +6,7 @@ var express = require('express'),
   twitter = require('twitter'),
   routes = require('./routes'),
   config = require('./config'),
-  streamHandler = require('./utils/streamHandler'),
-  mailer = require('./utils/mailer');
+  streamHandler = require('./utils/streamHandler');
 
 
 // Create an express instance and set a port variable
@@ -26,8 +25,8 @@ var mailOptions = {
     html: 'Hello world' // html body
 };
 
-// mailer(mailOptions);
 
+console.log(process.env.NODE_ENV);
 
 // Set handlebars as the templating engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
