@@ -1,5 +1,7 @@
 # Real Time Twitter Stream
 
+Searches tweets for keyword: deathpenalty
+
 Hosted on Heroku: https://react-twts.herokuapp.com/
 
 - React
@@ -9,5 +11,3 @@ Hosted on Heroku: https://react-twts.herokuapp.com/
 - Browserify
 - MongoDB
 - Mongoose
-
-Forked from: https://github.com/scotch-io/react-tweets
