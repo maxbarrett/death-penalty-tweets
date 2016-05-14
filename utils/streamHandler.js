@@ -4,6 +4,8 @@ module.exports = function(stream, io){
 
   // When tweets get sent our way ...
   stream.on('data', function(data) {
+    
+    if (data['user'] !== undefined) {
 
     // Construct a new tweet object
     var tweet = {
