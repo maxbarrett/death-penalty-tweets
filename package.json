@@ -1,5 +1,5 @@
 {
-	"name": "react-tweets",
+	"name": "death-penalty-tweets",
 	"version": "0.0.1",
 	"description": "React Example",
 	"main": "app.js",
@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/maxbarrett/react-tweets.git"
+		"url": "git://github.com/maxbarrett/death-penalty-tweets.git"
 	},
 	"license": "MIT",
 	"dependencies": {
