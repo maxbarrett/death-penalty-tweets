@@ -8,6 +8,7 @@ module.exports = function(stream, io){
     // Construct a new tweet object
     var tweet = {
       twid: data['id'],
+      twid_str: data['id_str'],
       active: false,
       author: data['user']['name'],
       avatar: data['user']['profile_image_url'].replace(/^http:\/\//i, 'https://'),

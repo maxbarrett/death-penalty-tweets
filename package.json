@@ -1,7 +1,7 @@
 {
 	"name": "react-tweets",
 	"version": "0.0.1",
-	"description": "Isomorphic React Example",
+	"description": "React Example",
 	"main": "app.js",
 	"scripts": {
 		"watch": "watchify app.js -o public/js/bundle.js -v",
@@ -13,7 +13,6 @@
 		"type": "git",
 		"url": "git://github.com/maxbarrett/react-tweets.git"
 	},
-	"author": "Ken Wheeler",
 	"license": "MIT",
 	"dependencies": {
 		"express": "~4.9.7",
@@ -23,7 +22,7 @@
 		"nodemailer": "^1.3.2",
 		"react": "~0.11.2",
 		"socket.io": "^1.1.0",
-		"twitter": "^1.2.0"
+		"twitter": "^1.2.5"
 	},
 	"devDependencies": {
 		"browserify": "~6.0.3",
