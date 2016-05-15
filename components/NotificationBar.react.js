@@ -5,10 +5,10 @@ const React = require('react');
 const NotificationBar = function(props) {
     const count = props.count;
     return (
-        <div className={"notification-bar" + (count > 0 ? 'active' : '')}>
+        <div key="notification" className={"notification-bar" + (count > 0 ? ' active' : '')}>
             <p>
-                There are {count} new tweets! 
-                <a href="#top" onClick={props.onShowNewTweets}>Click here to see them.</a>
+                There {(count > 1) ? 'are' : 'is'} {count} new tweet{(count > 1) ? 's' : ''}!&nbsp;
+                <a href="#top" onClick={props.onShowNewTweets}>Click here to see {(count > 1) ? 'them' : 'it'}.</a>
             </p>
         </div>
     );
