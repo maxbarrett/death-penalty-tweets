@@ -1,21 +1,25 @@
 /** @jsx React.DOM */
+'use strict';
+const React = require('react');
 
-var React = require('react');
-
-module.exports = Tweet = React.createClass({
-  render: function(){
-    var tweet = this.props.tweet;
+const Tweet = function(props) {
+    const tweet = props.tweet;
     return (
-      <li className={"tweet" + (tweet.active ? ' active' : '')}>
-        <img src={tweet.avatar} className="avatar"/>
-        <blockquote>
-          <cite>
-            <a target="_blank" href={"http://www.twitter.com/" + tweet.screenname + (tweet.twid_str ? '/status/' + tweet.twid_str : '')}>{tweet.author}</a> 
-            <span className="screen-name">@{tweet.screenname}</span> 
-          </cite>
-          <span className="content">{tweet.body}</span>
-        </blockquote>
-      </li>
-    )
-  }
-});
+        <li className={"tweet" + (tweet.active ? ' active' : '')}>
+            <img src={tweet.avatar} className="avatar" />
+            <blockquote>
+                <cite>
+                    <a target="_blank" href={"http://www.twitter.com/" + tweet.screenname + (tweet.twid_str ? '/status/' + tweet.twid_str : '')}>{tweet.author}</a> 
+                    <span className="screen-name">@{tweet.screenname}</span> 
+                </cite>
+                <span className="content">{tweet.body}</span>
+            </blockquote>
+        </li>
+    );
+};
+
+Tweet.propTypes = {
+    tweet: React.PropTypes.object.isRequired,
+};
+
+module.exports = Tweet;

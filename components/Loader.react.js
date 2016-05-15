@@ -1,13 +1,17 @@
 /** @jsx React.DOM */
+'use strict';
+const React = require('react');
 
-var React = require('react');
-
-module.exports = Loader = React.createClass({
-  render: function(){
+const Loader = function(props) {
     return (
-      <div className={"loader " + (this.props.paging ? "active" : "")}>
-        <img src="svg/loader.svg" />
-      </div>
-    )
-  }
-});
+        <div className={"loader " + (props.paging ? 'active' : "")}>
+            <img src="svg/loader.svg" />
+        </div>
+    );
+};
+
+Loader.propTypes = {
+    paging: React.PropTypes.bool.isRequired,
+};
+
+module.exports = Loader;

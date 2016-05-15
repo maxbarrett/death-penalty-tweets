@@ -1,25 +1,21 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var Tweet = require('./Tweet.react.js');
+const React = require('react');
+const Tweet = require('./Tweet.react.js');
 
-module.exports = Tweets = React.createClass({
-
-  // Render our tweets
-  render: function(){
-
+const Tweets = function(props) {
+    // Render our tweets
     // Build list items of single tweet components using map
-    var content = this.props.tweets.map(function(tweet){
-      return (
-        <Tweet key={tweet._id} tweet={tweet} />
-      )
+    const content = props.tweets.map(function(tweet) {
+        return (<Tweet key={tweet._id} tweet={tweet} />);
     });
 
     // Return ul filled with our mapped tweets
-    return (
-      <ul className="tweets">{content}</ul>
-    )
+    return (<ul className="tweets">{content}</ul>);
+};
 
-  }
+Tweets.propTypes = {
+    tweets: React.PropTypes.array.isRequired,
+};
 
-}); 
+module.exports = Tweets;

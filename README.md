@@ -1,8 +1,8 @@
 # Real Time Twitter Stream
 
-Searches tweets for keyword: deathpenalty
+Searches tweets for the keyword: "deathpenalty"
 
-Hosted on Heroku: https://react-twts.herokuapp.com/
+Hosted on Heroku: https://death-penalty-tweets.herokuapp.com
 
 - React
 - Node
