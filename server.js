@@ -36,7 +36,7 @@ app.get('/', routes.index);
 app.get('/page/:page/:skip', routes.page);
 
 // Set /public as our static content dir
-app.use("/", express.static(__dirname + "/public/"));
+app.use('/', express.static(__dirname + '/public/'));
 
 // Fire this bitch up (start our server)
 const server = http.createServer(app).listen(port, function() {

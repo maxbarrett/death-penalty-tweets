@@ -1,0 +1,12 @@
+{
+    "rules": {
+        "no-invalid-this": 0,
+        "no-magic-numbers": 0,
+    },
+    "env": {
+        "qunit": true
+    },
+    "globals": {
+        "sinon": false
+    }
+}
