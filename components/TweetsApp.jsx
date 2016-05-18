@@ -1,10 +1,9 @@
-/** @jsx React.DOM */
 /* global io:false */
 'use strict';
 const React = require('react');
-const Tweets = require('./Tweets.react.js');
-const Loader = require('./Loader.react.js');
-const NotificationBar = require('./NotificationBar.react.js');
+const Tweets = require('./Tweets');
+const Loader = require('./Loader');
+const NotificationBar = require('./NotificationBar');
 
 // Export the TweetsApp component
 class TweetsApp extends React.Component {
