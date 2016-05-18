@@ -1,10 +1,7 @@
 const path = require('path');
 
-const babel = {
-    presets: ['es2015', 'react'],
-};
-
 module.exports = {
+    devtool: 'inline-source-map',
     entry: './app.js',
     resolve: {
         root: path.resolve(__dirname),
@@ -20,7 +17,6 @@ module.exports = {
                 test: /\.jsx?$/,
                 loader: 'babel',
                 exclude: /(node_modules)/,
-                query: babel,
             },
         ],
     },
