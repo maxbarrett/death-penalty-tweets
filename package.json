@@ -4,11 +4,12 @@
   "description": "A React Example",
   "main": "app.js",
   "scripts": {
-    "watch": "webpack --progress --colors --watch",
     "build": "webpack",
-    "start": "npm run watch & nodemon server.js",
+    "lint": "eslint . --ext .js --ext .jsx",
+    "postinstall": "npm run build",
     "server": "nodemon server.js",
-    "lint": "eslint . --ext .js --ext .jsx"
+    "start": "npm run watch & nodemon server.js",
+    "watch": "webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",
