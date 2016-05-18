@@ -1,7 +1,6 @@
-/** @jsx React.DOM */
-
+'use strict';
 const React = require('react');
-const Tweet = require('./Tweet.react.js');
+const Tweet = require('./Tweet');
 
 const Tweets = function(props) {
     // Render our tweets

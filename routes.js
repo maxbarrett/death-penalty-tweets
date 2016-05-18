@@ -1,13 +1,11 @@
 'use strict';
-const JSX = require('node-jsx');
-JSX.install();
+require('babel-register');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
-const tweetsApp = React.createFactory(require('./components/TweetsApp.react'));
+const tweetsApp = React.createFactory(require('./components/TweetsApp'));
 const Tweet = require('./models/Tweet');
 
 module.exports = {
-
     index: function(req, res) {
         // Call static model method to get tweets in the db
         Tweet.getTweets(0, 0, function(tweets, pages) {
