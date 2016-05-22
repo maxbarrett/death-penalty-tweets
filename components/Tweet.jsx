@@ -1,11 +1,10 @@
-/** @jsx React.DOM */
 'use strict';
 const React = require('react');
 
 const Tweet = function(props) {
     const tweet = props.tweet;
     return (
-        <li className={"tweet" + (tweet.active ? ' active' : '')} key={tweet.twid_str}>
+        <li className={'tweet' + (tweet.active ? ' active' : '')} key={tweet.twid_str}>
             <img src={tweet.avatar} className="avatar" />
             <blockquote>
                 <cite>
