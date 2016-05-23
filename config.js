@@ -13,5 +13,5 @@ const emailAuth = {
     pass: 'password1',
 };
 
-exports.twitter = twitter;
-exports.emailAuth = emailAuth;
+module.exports.twitter = twitter;
+module.exports.emailAuth = emailAuth;
