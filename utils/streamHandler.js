@@ -31,4 +31,10 @@ module.exports = function(stream, io) {
             });
         }
     });
+
+    // Handle Twitter's prolific Status Code: 420 error
+    // "Exceeded connection limit for user"
+    stream.on('error', function(err) {
+        console.log(err);
+    });
 };
