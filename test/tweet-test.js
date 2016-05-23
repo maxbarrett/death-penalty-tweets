@@ -10,7 +10,7 @@ const defaultProps = {
         screenname: 'foo',
         author: 'bar',
         body: 'howdy doo',
-        avatar: 'lorem/pixel',
+        avatar: 'http://lorempixel.com/50/50',
     },
 };
 
