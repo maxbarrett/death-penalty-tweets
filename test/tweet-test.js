@@ -1,7 +1,8 @@
-const React = require('react');
-const TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
+import Tweet from '../components/Tweet';
+
 const shallowRenderer = TestUtils.createRenderer();
-const Tweet = require('../components/Tweet');
 
 const defaultProps = {
     tweet: {
@@ -14,9 +15,21 @@ const defaultProps = {
     },
 };
 
-QUnit.test('the Tweet shallow render', function(assert) {
+QUnit.test('the active Tweet class', assert => {
     shallowRenderer.render(<Tweet {...defaultProps} />);
     const component = shallowRenderer.getRenderOutput();
-    assert.equal(component.props.className, 'tweet active', 'expected class to be tweet active');
+    assert.equal(component.props.className, 'tweet active', 'expected class to be \'tweet active\'');
 });
 
+QUnit.test('the inactive Tweet class', assert => {
+    const newProps = {
+        ...defaultProps,
+        tweet: {
+            ...defaultProps.tweet,
+            active: false,
+        },
+    };
+    shallowRenderer.render(<Tweet {...newProps} />);
+    const component = shallowRenderer.getRenderOutput();
+    assert.equal(component.props.className, 'tweet', 'expected class to be \'tweet\'');
+});
