@@ -1,6 +1,6 @@
 'use strict';
-const React = require('react');
-const Tweet = require('./Tweet');
+import React from 'react';
+import Tweet from './Tweet';
 
 const Tweets = function(props) {
     // Render our tweets

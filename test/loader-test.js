@@ -4,6 +4,8 @@ import Loader from '../components/Loader';
 
 const shallowRenderer = TestUtils.createRenderer();
 
+QUnit.module('Loader');
+
 QUnit.test('the Loader is a div with correct class names', assert => {
     shallowRenderer.render(<Loader paging />);
     const component = shallowRenderer.getRenderOutput();

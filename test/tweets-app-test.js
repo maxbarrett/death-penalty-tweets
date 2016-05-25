@@ -1,11 +1,14 @@
-const React = require('react');
-const TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
+import TweetsApp from '../components/TweetsApp';
+
 const shallowRenderer = TestUtils.createRenderer();
-const TweetsApp = require('../components/TweetsApp');
 
 const defaultProps = {
     
 };
+
+QUnit.module('TweetsApp');
 
 QUnit.test('the TweetsApp shallow render', function(assert) {
     shallowRenderer.render(<TweetsApp {...defaultProps} />);

@@ -9,7 +9,7 @@
     "postinstall": "npm run build",
     "server": "nodemon server.js",
     "start": "npm run watch & nodemon server.js",
-    "test": "./node_modules/.bin/babel-node ./test/test-index.js",
+    "test": "./node_modules/.bin/babel-node ./node_modules/.bin/qunit -c ./components/ -t ./test/*",
     "watch": "webpack --progress --colors --watch"
   },
   "repository": {

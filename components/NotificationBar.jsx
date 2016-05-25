@@ -1,5 +1,5 @@
 'use strict';
-const React = require('react');
+import React from 'react';
 
 const NotificationBar = props => {
     const count = props.count;

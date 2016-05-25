@@ -15,6 +15,8 @@ const defaultProps = {
     },
 };
 
+QUnit.module('Tweet');
+
 QUnit.test('the active Tweet class', assert => {
     shallowRenderer.render(<Tweet {...defaultProps} />);
     const component = shallowRenderer.getRenderOutput();
