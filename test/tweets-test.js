@@ -1,9 +1,10 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-const Tweets = require('../components/Tweets');
+import { findWithClass, findAllWithType, isDOMComponent } from 'react-shallow-testutils';
+import Tweet from '../components/Tweet';
+import Tweets from '../components/Tweets';
 
 const shallowRenderer = TestUtils.createRenderer();
-
 const defaultProps = {
     tweets: [
         {
@@ -35,9 +36,26 @@ const defaultProps = {
 
 QUnit.module('Tweets');
 
-QUnit.test('the Tweets shallow render', function(assert) {
-    shallowRenderer.render(<Tweets {...defaultProps} />);
-    const component = shallowRenderer.getRenderOutput();
-    assert.ok(true, 'truth bomb!');
+QUnit.test('the Tweets list exists', assert => {
+    const component = shallowRenderer.render(<Tweets {...defaultProps} />);
+
+    assert.ok(findWithClass(component, 'tweets'), 'expected 1 \'tweets\' class');
 });
 
+QUnit.test('the Tweets list has 3 Tweets', assert => {
+    const component = shallowRenderer.render(<Tweets {...defaultProps} />);
+
+    assert.equal(findAllWithType(component, Tweet).length, 3, 'expected 3 \'Tweet\' items');
+});
+
+QUnit.test('the Tweets list is a \'ul\'', assert => {
+    const component = shallowRenderer.render(<Tweets {...defaultProps} />);
+
+    assert.ok(component.type === 'ul', 'expected tweets type to be \'ul\'');
+});
+
+QUnit.test('the Tweets list is a dom component', assert => {
+    const component = shallowRenderer.render(<Tweets {...defaultProps} />);
+
+    assert.ok(isDOMComponent(component), 'expected a dom component');
+});

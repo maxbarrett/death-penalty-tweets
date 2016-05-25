@@ -1,7 +1,7 @@
 'use strict';
 import React from 'react';
 
-const Tweet = function(props) {
+const Tweet = props => {
     const tweet = props.tweet;
     return (
         <li className={'tweet' + (tweet.active ? ' active' : '')} key={tweet.twid_str}>

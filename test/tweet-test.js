@@ -35,3 +35,9 @@ QUnit.test('the inactive Tweet class', assert => {
     const component = shallowRenderer.getRenderOutput();
     assert.equal(component.props.className, 'tweet', 'expected class to be \'tweet\'');
 });
+
+QUnit.test('the Tweet key', assert => {
+    const component = shallowRenderer.render(<Tweet {...defaultProps} />);
+
+    assert.equal(component.key, '12345', 'expected class to be \'tweet\'');
+});
