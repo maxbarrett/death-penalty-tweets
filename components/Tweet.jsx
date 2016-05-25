@@ -21,4 +21,4 @@ Tweet.propTypes = {
     tweet: React.PropTypes.object.isRequired,
 };
 
-module.exports = Tweet;
+export default Tweet;

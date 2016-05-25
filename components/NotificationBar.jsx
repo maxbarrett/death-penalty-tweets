@@ -19,4 +19,4 @@ NotificationBar.propTypes = {
     onShowNewTweets: React.PropTypes.func.isRequired,
 };
 
-module.exports = NotificationBar;
+export default NotificationBar;

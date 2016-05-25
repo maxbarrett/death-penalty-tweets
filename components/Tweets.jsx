@@ -17,4 +17,4 @@ Tweets.propTypes = {
     tweets: React.PropTypes.array.isRequired,
 };
 
-module.exports = Tweets;
+export default Tweets;

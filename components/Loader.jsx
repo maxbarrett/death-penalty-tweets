@@ -13,4 +13,4 @@ Loader.propTypes = {
     paging: React.PropTypes.bool.isRequired,
 };
 
-module.exports = Loader;
+export default Loader;

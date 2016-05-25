@@ -183,5 +183,5 @@ class TweetsApp extends React.Component {
     }
 }
 
-module.exports = TweetsApp;
+export default TweetsApp;
 
