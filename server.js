@@ -5,7 +5,6 @@ const http = require('http');
 const mongoose = require('mongoose');
 const Twitter = require('twitter');
 const routes = require('./routes');
-const config = require('./config');
 const streamHandler = require('./utils/streamHandler');
 
 // Create an express instance and set a port variable
@@ -14,7 +13,6 @@ const app = express();
 const port = process.env.PORT || LOCAL_PORT;
 const db = process.env.MONGOLAB_URI || 'mongodb://localhost/react-tweets';
 const env = process.env.NODE_ENV || 'development';
-
 
 // Set handlebars as the templating engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
@@ -26,8 +24,17 @@ app.disable('etag');
 // Connect to our mongo database
 mongoose.connect(db);
 
+const twitterProdConfig = {
+    consumer_key: process.env.TWITTER_consumer_key,
+    consumer_secret: process.env.TWITTER_consumer_secret,
+    access_token_key: process.env.TWITTER_access_token_key,
+    access_token_secret: process.env.TWITTER_access_token_secret,
+};
+
+const twitterConfig = (env === 'production') ? twitterProdConfig : require('./config').twitter;
+
 // Create a new twitter instance
-const twit = new Twitter(config.twitter);
+const twit = new Twitter(twitterConfig);
 
 // Index Route
 app.get('/', routes.index);
