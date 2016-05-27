@@ -2,7 +2,7 @@
 require('babel-register');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
-const tweetsApp = React.createFactory(require('./components/TweetsApp'));
+const tweetsApp = React.createFactory(require('./components/TweetsApp').default);
 const Tweet = require('./models/Tweet');
 
 module.exports = {
