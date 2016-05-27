@@ -51,9 +51,3 @@ QUnit.test('the TweetsApp shallow render', assert => {
 
     assert.ok(isDOMComponent(component), 'expected a dom component');
 });
-
-QUnit.test('the TweetsApp shallow render', assert => {
-    const component = shallowRenderer.render(<TweetsApp {...defaultProps} />);
-
-    assert.ok(true, 'truth bomb!');
-});
