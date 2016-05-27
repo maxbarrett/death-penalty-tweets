@@ -4,11 +4,12 @@
   "description": "A React Example",
   "main": "app.js",
   "scripts": {
+    "clean": "rm ./public/js/*",
     "build": "webpack",
     "lint": "eslint . --ext .js --ext .jsx",
     "postinstall": "npm run build",
     "server": "nodemon server.js",
-    "start": "npm run watch & nodemon server.js",
+    "start": "npm run clean & npm run watch & nodemon server.js",
     "test": "./node_modules/.bin/babel-node ./node_modules/.bin/qunit -c ./components/ -t ./test/*",
     "watch": "webpack --progress --colors --watch"
   },
