@@ -8,6 +8,8 @@ Hosted on Heroku: https://death-penalty-tweets.herokuapp.com
 - Node
 - Express
 - Websockets
-- Browserify
+- Webpack
+- Babel
 - MongoDB
 - Mongoose
+– QUnit

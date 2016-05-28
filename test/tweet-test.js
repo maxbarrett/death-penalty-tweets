@@ -24,10 +24,10 @@ QUnit.test('the active Tweet class', assert => {
     assert.equal(component.props.className, 'tweet active', 'expected class to be \'tweet active\'');
 });
 
-QUnit.test('the active Tweet class', assert => {
+QUnit.test('it is a dom element', assert => {
     const component = shallowRenderer.render(<Tweet {...defaultProps} />);
 
-    assert.ok(isDOMComponent(component), 'expected component to be a dom element');
+    assert.ok(isDOMComponent(component), 'expected Tweet to be a dom element');
 });
 
 QUnit.test('the inactive Tweet class', assert => {
