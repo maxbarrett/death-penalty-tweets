@@ -1,6 +1,6 @@
 'use strict';
 const React = require('react');
-const TweetsApp = require('./components/TweetsApp');
+const TweetsApp = require('./components/TweetsApp').default;
 const ReactDOM = require('react-dom');
 
 // Snag the initial state that was passed from the server side
