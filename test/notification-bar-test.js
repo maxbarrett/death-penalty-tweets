@@ -40,7 +40,7 @@ QUnit.test('onShowNewTweets function', assert => {
     />);
 
     const showMoreTweeksLink = findWithClass(component, 'show-new-tweets');
-    showMoreTweeksLink.props.onClick();
+    //showMoreTweeksLink.props.onClick();
 
     assert.ok(onShowNewTweetsSpy.calledOnce, 'onShowNewTweets function called once');
 });
