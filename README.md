@@ -12,4 +12,4 @@ Hosted on Heroku: https://death-penalty-tweets.herokuapp.com
 - Babel
 - MongoDB
 - Mongoose
-– QUnit
+- QUnit
