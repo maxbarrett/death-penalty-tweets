@@ -2,6 +2,7 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import { findWithClass, isDOMComponent } from 'react-shallow-testutils';
 import NotificationBar from '../components/NotificationBar';
+import sinon from 'sinon';
 
 const shallowRenderer = TestUtils.createRenderer();
 
@@ -32,13 +33,14 @@ QUnit.test('it is a dom element', assert => {
 });
 
 QUnit.test('onShowNewTweets function', assert => {
+    const onShowNewTweetsSpy = sinon.spy();
     const component = shallowRenderer.render(<NotificationBar
         count={3}
-        onShowNewTweets={() => {
-
-        }}
+        onShowNewTweets={onShowNewTweetsSpy}
     />);
-    console.log(findWithClass(component, 'show-new-tweets'));
-    assert.ok(true, 'onShowNewTweets function called');
-});
 
+    const showMoreTweeksLink = findWithClass(component, 'show-new-tweets');
+    showMoreTweeksLink.props.onClick();
+
+    assert.ok(onShowNewTweetsSpy.calledOnce, 'onShowNewTweets function called once');
+});

@@ -61,7 +61,6 @@ QUnit.test('the avatar', assert => {
     assert.ok(findWithClass(component, 'avatar'), 'expected 1 avatar');
 });
 
-
 QUnit.test('the number of blockquotes', assert => {
     const component = shallowRenderer.render(<Tweet {...defaultProps} />);
 
@@ -85,5 +84,3 @@ QUnit.test('the content', assert => {
 
     assert.ok(findWithClass(component, 'content'), 'expected 1 content class');
 });
-
-
