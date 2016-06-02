@@ -1,4 +1,6 @@
-# Real Time Twitter Stream
+# Death penalty tweets
+
+#### A Real Time Twitter Stream
 
 Searches tweets for the keyword: "deathpenalty"
 
