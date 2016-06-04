@@ -4,3 +4,4 @@ public/js/bundle.js
 node_modules
 *.log
 *.map
+test-results.xml

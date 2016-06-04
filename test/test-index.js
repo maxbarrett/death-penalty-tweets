@@ -1,3 +1,5 @@
+import builder from 'xmlbuilder';
+import fs from 'fs';
 import QUnit from 'qunit';
 
 QUnit.setup({
@@ -32,7 +34,27 @@ QUnit.run({
         './test/tweets-app-test.js',
         './test/tweets-test.js',
     ],
-}, (err, report) => {
-    console.log(report);
-    console.log(err);
-});
+}, testSuitCallback);
+
+
+function testSuitCallback(err, report) {
+    let xml;
+    if (report.failed === 0 && !err) {
+        xml = builder.create('testsuites');
+        xml.attr('status', 'passed');
+        xml.end({ pretty: true });
+        
+    } else {
+        xml = builder.create('testsuites');
+        xml.attr('status', 'failed');
+
+        for (let i = 1; i <= report.failed; i++) {
+            xml.ele('failure');
+        }
+
+        xml.end({ pretty: true });
+    }
+
+    fs.writeFileSync('test/test-results.xml', xml);
+}
+
